@@ -399,7 +399,7 @@ function App() {
           <Suspense fallback={null}>
             <SonicCrest />
             <ParticleField />
-            <Environment preset="night" />
+            <Environment files="/hdri/night.hdr" />
             <ContactShadows opacity={0.4} scale={10} blur={2.4} far={4.5} />
           </Suspense>
         </Canvas>
