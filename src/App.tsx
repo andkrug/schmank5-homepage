@@ -1,14 +1,9 @@
-import * as React from 'react';
-import { useRef, useMemo, Suspense } from 'react';
+import { useRef, useMemo, Suspense, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Text, ContactShadows, Environment, MeshDistortMaterial, Html, useTexture } from '@react-three/drei';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Music, Mail, Phone, Instagram, ChevronDown } from 'lucide-react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { Music, Mail, Phone, Instagram, ChevronDown, X } from 'lucide-react';
 import * as THREE from 'three';
-
-// --- Background Components ---
-
-// --- Background & Logo Components ---
 
 // --- Background & Logo Components ---
 
@@ -68,10 +63,6 @@ const SonicCrest = () => {
     </group>
   );
 };
-
-
-
-
 
 const ParticleField = () => {
   const count = 1000;
@@ -151,9 +142,6 @@ const Hero = () => {
     </section>
   );
 };
-
-
-
 
 const Ingredients = () => {
   const items = [
@@ -303,9 +291,101 @@ const Contact = () => {
   );
 };
 
+// --- Legal Modal Component ---
+
+const LegalModal = ({ isOpen, onClose, type }: { isOpen: boolean; onClose: () => void; type: 'impressum' | 'privacy' }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div 
+        className="absolute inset-0 bg-black/60 backdrop-blur-md" 
+        onClick={onClose}
+      />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        className="relative bg-stone-900 border border-honey-gold/20 p-8 rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto text-stone-300 shadow-2xl"
+      >
+        <button 
+          onClick={onClose}
+          className="absolute top-6 right-6 text-stone-500 hover:text-honey-gold transition-colors"
+        >
+          <X size={24} />
+        </button>
+
+        {type === 'impressum' ? (
+          <div>
+            <h2 className="text-3xl font-playfair text-white mb-6">Impressum</h2>
+            <div className="space-y-4 font-inter text-sm md:text-base">
+              <p><strong>Andreas Rene Krug IT-Dienstleistungen</strong></p>
+              <p>
+                Schrannengasse 4/Top 17<br/>
+                5020 Salzburg<br/>
+                Österreich
+              </p>
+              <p>
+                <strong>Kontakt:</strong><br/>
+                Telefon: +43 664 400 73 54<br/>
+                E-Mail: office@andreas-krug.at
+              </p>
+              <p>
+                <strong>Unternehmensgegenstand:</strong><br/>
+                Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik.
+              </p>
+              <p>
+                <strong>Mitgliedschaften:</strong><br/>
+                Mitglied der WKO, Fachgruppe UBIT
+              </p>
+              <p>
+                <strong>Aufsichtsbehörde:</strong><br/>
+                Magistrat der Stadt Salzburg
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <h2 className="text-3xl font-playfair text-white mb-6">Datenschutzerklärung</h2>
+            <div className="space-y-4 font-inter text-sm">
+              <h3 className="text-lg text-honey-gold font-bold mt-4">1. Datenschutz auf einen Blick</h3>
+              <p>
+                Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).
+              </p>
+              
+              <h3 className="text-lg text-honey-gold font-bold mt-4">2. Erfassung von Daten beim Besuch dieser Website</h3>
+              <p>
+                Bei der bloß informatorischen Nutzung der Website, also wenn Sie sich nicht registrieren oder uns anderweitig Informationen übermitteln, erheben wir nur solche Daten, die Ihr Browser an unseren Server übermittelt (Server-Logfiles). Dies sind: IP-Adresse, Datum/Uhrzeit der Anfrage, Zeitzonendifferenz, Inhalt der Anforderung, Browser-Status, übertragene Datenmenge, Website der Anforderung, Browser-Typ und -Version sowie Betriebssystem.
+              </p>
+
+              <h3 className="text-lg text-honey-gold font-bold mt-4">3. Kontakt mit uns</h3>
+              <p>
+                Wenn Sie per E-Mail Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen sechs Monate bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+              </p>
+
+              <h3 className="text-lg text-honey-gold font-bold mt-4">4. Ihre Rechte</h3>
+              <p>
+                Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren (In Österreich: Datenschutzbehörde).
+              </p>
+            </div>
+          </div>
+        )}
+      </motion.div>
+    </div>
+  );
+};
+
 // --- App Root ---
 
 function App() {
+  const [legalOpen, setLegalOpen] = useState(false);
+  const [legalContent, setLegalContent] = useState<'impressum' | 'privacy'>('impressum');
+
+  const openLegal = (type: 'impressum' | 'privacy') => {
+    setLegalContent(type);
+    setLegalOpen(true);
+  };
+
   return (
     <div className="bg-warm-black min-h-screen font-inter">
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -333,10 +413,25 @@ function App() {
 
       {/* Signature */}
       <footer className="relative z-10 py-12 px-6 border-t border-stone-900 text-center">
+        <div className="flex justify-center gap-6 mb-4 text-xs uppercase tracking-widest text-stone-500">
+          <button onClick={() => openLegal('impressum')} className="hover:text-honey-gold transition-colors">Impressum</button>
+          <span className="text-stone-800">|</span>
+          <button onClick={() => openLegal('privacy')} className="hover:text-honey-gold transition-colors">Datenschutz</button>
+        </div>
         <p className="text-[10px] uppercase tracking-[0.5em] text-stone-600">
           © {new Date().getFullYear()} Schmank5 Quintett — All Rights Served
         </p>
       </footer>
+
+      <AnimatePresence>
+        {legalOpen && (
+          <LegalModal 
+            isOpen={legalOpen} 
+            onClose={() => setLegalOpen(false)} 
+            type={legalContent} 
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
