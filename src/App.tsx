@@ -65,7 +65,7 @@ const SonicCrest = () => {
 };
 
 const ParticleField = () => {
-  const count = 1000;
+  const count = 400;
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
@@ -160,9 +160,9 @@ const Ingredients = () => {
         transition={{ duration: 1 }}
         className="max-w-7xl mx-auto"
       >
-        <div className="flex flex-col mb-20">
-          <h2 className="text-5xl md:text-8xl font-playfair italic text-white mb-4">Die Zutaten</h2>
-          <div className="h-1 w-32 bg-honey-gold" />
+        <div className="flex flex-col mb-16">
+          <h2 className="text-4xl md:text-8xl font-playfair italic text-white mb-4">Die Zutaten</h2>
+          <div className="h-1 w-24 bg-honey-gold" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
@@ -215,9 +215,9 @@ const Menu = () => {
   return (
     <section className="min-h-screen py-32 bg-stone-900/10 backdrop-blur-sm">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-24">
-          <p className="text-honey-gold uppercase tracking-[0.3em] text-sm mb-4 italic">Unser Repertoire</p>
-          <h2 className="text-6xl md:text-8xl font-playfair font-bold text-white uppercase tracking-tighter">Das Menü</h2>
+        <div className="text-center mb-16 px-4">
+          <p className="text-honey-gold uppercase tracking-[0.3em] text-xs md:text-sm mb-4 italic">Unser Repertoire</p>
+          <h2 className="text-5xl md:text-8xl font-playfair font-bold text-white uppercase tracking-tighter break-words">Das Menü</h2>
         </div>
 
         <div className="space-y-24">
@@ -248,7 +248,7 @@ const Contact = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-6">
       <div className="glass-panel p-12 md:p-24 rounded-[4rem] text-center max-w-4xl w-full border-honey-gold/20 relative z-10">
-        <h2 className="text-5xl md:text-8xl font-playfair font-bold text-white mb-8 tracking-tighter italic">
+        <h2 className="text-4xl md:text-8xl font-playfair font-bold text-white mb-8 tracking-tighter italic break-words">
           Kontakt & Buchung
         </h2>
         <p className="text-xl md:text-2xl text-stone-400 mb-12 font-inter">
@@ -266,17 +266,17 @@ const Contact = () => {
             Anfrage Senden
           </motion.a>
           
-          <div className="flex gap-8 mt-8 text-stone-500 items-center">
+          <div className="flex flex-col md:flex-row flex-wrap justify-center gap-4 md:gap-8 mt-8 text-stone-500 items-center">
             <a href="mailto:kontakt@schmank5.at" className="hover:text-honey-gold transition-colors flex items-center gap-2">
               <Mail size={18} />
               <span>kontakt@schmank5.at</span>
             </a>
-            <div className="w-1 h-1 bg-stone-700 rounded-full" />
+            <div className="hidden md:block w-1 h-1 bg-stone-700 rounded-full" />
             <a href="tel:+436644007354" className="hover:text-honey-gold transition-colors flex items-center gap-2">
               <Phone size={18} />
               <span>+43 664 4007354</span>
             </a>
-            <div className="w-1 h-1 bg-stone-700 rounded-full" />
+            <div className="hidden md:block w-1 h-1 bg-stone-700 rounded-full" />
             <a href="https://www.instagram.com/schmank5" target="_blank" rel="noreferrer" className="hover:text-honey-gold transition-colors flex items-center gap-2">
               <Instagram size={18} />
               <span>@schmank5</span>
