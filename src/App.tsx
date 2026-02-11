@@ -157,11 +157,11 @@ const Hero = () => {
 
 const Ingredients = () => {
   const items = [
-    { name: "Bass", flavor: "Geräucherte Eiche & Tiefe Erde", color: "#2d0a0a" },
-    { name: "Klarinette", flavor: "Samtseide & Dunkler Honig", color: "#4A0E0E" },
-    { name: "Schlagzeug", flavor: "Knackiger Pfeffer & Dynamik", color: "#1A0F0F" },
-    { name: "Klavier", flavor: "Kristallzucker & Mitternachtsregen", color: "#DAA520" },
-    { name: "Saxophon", flavor: "Gebranntes Kupfer & Goldglanz", color: "#9d7312" },
+    { name: "Michael Stadlman", instrument: "Trompete / Flügelhorn", flavor: "Pikante Höhen & Goldener Glanz", color: "#DAA520" },
+    { name: "Stefan Lutzman", instrument: "Trompete / Flügelhorn", flavor: "Strahlende Würze & Cremiger Schmelz", color: "#F0E68C" },
+    { name: "Andreas Krug", instrument: "Tenorhorn / Basstrompete", flavor: "Samtige Fülle & Warmer Kakao", color: "#8B4513" },
+    { name: "Florian Berger", instrument: "Tenorhorn / Basstrompete", flavor: "Röstnoten & Weicher Karamel", color: "#D2691E" },
+    { name: "Moritz Redl", instrument: "Bassposaune", flavor: "Dunkle Schokolade & Tiefes Fundament", color: "#3E2723" },
   ];
 
   return (
@@ -187,15 +187,16 @@ const Ingredients = () => {
               className="flex flex-col items-center group"
             >
               <div 
-                className="w-48 h-48 rounded-full mb-8 flex items-center justify-center relative overflow-hidden transition-transform duration-500 group-hover:scale-110"
+                className="w-48 h-48 rounded-full mb-6 flex items-center justify-center relative overflow-hidden transition-transform duration-500 group-hover:scale-110"
                 style={{ background: `radial-gradient(circle, ${item.color} 0%, #000 100%)` }}
               >
                 <div className="absolute inset-0 border border-white/10 rounded-full" />
                 <div className="absolute inset-4 border border-white/5 rounded-full animate-pulse" />
                 <Music className="text-white/20" size={40} />
               </div>
-              <h3 className="text-2xl font-playfair font-bold text-white mb-2">{item.name}</h3>
-              <p className="text-sm font-inter text-stone-500 text-center uppercase tracking-widest">{item.flavor}</p>
+              <h3 className="text-xl font-playfair font-bold text-white mb-1 text-center">{item.name}</h3>
+              <p className="text-xs font-inter text-honey-gold uppercase tracking-wider mb-2 text-center">{item.instrument}</p>
+              <p className="text-sm font-inter text-stone-500 text-center italic">{item.flavor}</p>
             </motion.div>
           ))}
         </div>
