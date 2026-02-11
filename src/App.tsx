@@ -266,17 +266,17 @@ const Contact = () => {
             Anfrage Senden
           </motion.a>
           
-          <div className="flex flex-col md:flex-row flex-wrap justify-center gap-4 md:gap-8 mt-8 text-stone-500 items-center">
+          <div className="flex flex-col md:flex-row flex-wrap justify-center gap-4 md:gap-8 mt-8 text-stone-300 items-center">
             <a href="mailto:kontakt@schmank5.at" className="hover:text-honey-gold transition-colors flex items-center gap-2">
               <Mail size={18} />
               <span>kontakt@schmank5.at</span>
             </a>
-            <div className="hidden md:block w-1 h-1 bg-stone-700 rounded-full" />
+            <div className="hidden md:block w-1 h-1 bg-stone-500 rounded-full" />
             <a href="tel:+436644007354" className="hover:text-honey-gold transition-colors flex items-center gap-2">
               <Phone size={18} />
               <span>+43 664 4007354</span>
             </a>
-            <div className="hidden md:block w-1 h-1 bg-stone-700 rounded-full" />
+            <div className="hidden md:block w-1 h-1 bg-stone-500 rounded-full" />
             <a href="https://www.instagram.com/schmank5" target="_blank" rel="noreferrer" className="hover:text-honey-gold transition-colors flex items-center gap-2">
               <Instagram size={18} />
               <span>@schmank5</span>
@@ -415,12 +415,12 @@ function App() {
 
       {/* Signature */}
       <footer className="relative z-10 py-12 px-6 border-t border-stone-900 text-center">
-        <div className="flex justify-center gap-6 mb-4 text-xs uppercase tracking-widest text-stone-500">
+        <div className="flex justify-center gap-6 mb-4 text-xs uppercase tracking-widest text-stone-300">
           <button onClick={() => openLegal('impressum')} className="hover:text-honey-gold transition-colors">Impressum</button>
-          <span className="text-stone-800">|</span>
+          <span className="text-stone-600">|</span>
           <button onClick={() => openLegal('privacy')} className="hover:text-honey-gold transition-colors">Datenschutz</button>
         </div>
-        <p className="text-[10px] uppercase tracking-[0.5em] text-stone-600">
+        <p className="text-[10px] uppercase tracking-[0.5em] text-stone-400">
           © {new Date().getFullYear()} Schmank5 Quintett — All Rights Served
         </p>
       </footer>
