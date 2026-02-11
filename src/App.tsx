@@ -1,6 +1,6 @@
 import { useRef, useMemo, Suspense, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Text, ContactShadows, Environment, MeshDistortMaterial, Html, useTexture } from '@react-three/drei';
+import { ContactShadows, Environment, MeshDistortMaterial, useTexture } from '@react-three/drei';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Music, Mail, Phone, Instagram, ChevronDown, X } from 'lucide-react';
 import * as THREE from 'three';
@@ -14,7 +14,7 @@ const SonicCrest = () => {
   // Load the logo texture
   const texture = useTexture('braun.png');
 
-  useFrame((state) => {
+  useFrame((state: any) => {
     if (!meshRef.current) return;
     const time = state.clock.getElapsedTime();
     const scroll = scrollYProgress.get();
@@ -78,7 +78,7 @@ const ParticleField = () => {
 
   const pointsRef = useRef<THREE.Points>(null);
 
-  useFrame((state) => {
+  useFrame((state: any) => {
     if (!pointsRef.current) return;
     pointsRef.current.rotation.y = state.clock.getElapsedTime() * 0.05;
   });
