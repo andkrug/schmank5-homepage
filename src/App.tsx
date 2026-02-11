@@ -135,7 +135,7 @@ const Hero = () => {
         >
           <div className="h-px w-24 bg-honey-gold/50 mb-6 mx-auto" />
           <p className="text-sm md:text-xl font-inter tracking-[0.8em] text-honey-gold/80 italic">
-            A Sonic Delicacy
+            Ein musikalischer Leckerbissen
           </p>
         </motion.div>
       </motion.div>
@@ -145,7 +145,7 @@ const Hero = () => {
         transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-10 flex flex-col items-center gap-2 text-stone-500"
       >
-        <span className="text-[10px] uppercase tracking-widest">Scroll to taste</span>
+        <span className="text-[10px] uppercase tracking-widest">Scrollen zum Genießen</span>
         <ChevronDown size={20} />
       </motion.div>
     </section>
@@ -157,11 +157,11 @@ const Hero = () => {
 
 const Ingredients = () => {
   const items = [
-    { name: "Bass", flavor: "Smoked Oak & Deep Earth", color: "#2d0a0a" },
-    { name: "Clarinet", flavor: "Velvet Silk & Dark Honey", color: "#4A0E0E" },
-    { name: "Drums", flavor: "Crisp Pepper & Snap", color: "#1A0F0F" },
-    { name: "Piano", flavor: "Crystal Sugar & Midnight Rain", color: "#DAA520" },
-    { name: "Saxophone", flavor: "Burnt Copper & Golden Glow", color: "#9d7312" },
+    { name: "Bass", flavor: "Geräucherte Eiche & Tiefe Erde", color: "#2d0a0a" },
+    { name: "Klarinette", flavor: "Samtseide & Dunkler Honig", color: "#4A0E0E" },
+    { name: "Schlagzeug", flavor: "Knackiger Pfeffer & Dynamik", color: "#1A0F0F" },
+    { name: "Klavier", flavor: "Kristallzucker & Mitternachtsregen", color: "#DAA520" },
+    { name: "Saxophon", flavor: "Gebranntes Kupfer & Goldglanz", color: "#9d7312" },
   ];
 
   return (
@@ -173,7 +173,7 @@ const Ingredients = () => {
         className="max-w-7xl mx-auto"
       >
         <div className="flex flex-col mb-20">
-          <h2 className="text-5xl md:text-8xl font-playfair italic text-white mb-4">The Ingredients</h2>
+          <h2 className="text-5xl md:text-8xl font-playfair italic text-white mb-4">Die Zutaten</h2>
           <div className="h-1 w-32 bg-honey-gold" />
         </div>
 
@@ -207,19 +207,19 @@ const Ingredients = () => {
 const Menu = () => {
   const courses = [
     {
-      type: "The Opening",
-      title: "Amuse-Bouche",
-      content: "A light, effervescent collection of chamber-jazz standards to awaken the auditory palate."
+      type: "Der Auftakt",
+      title: "Tradition & Heimat",
+      content: "Herzhafte Märsche und schwungvolle Polkas, serviert mit bodenständiger Präzision."
     },
     {
-      type: "The Meat",
-      title: "Main Course: Fusion Roast",
-      content: "Complex arrangements of 7/8 rhythms, seasoned with heavy brass textures and savory harmonies."
+      type: "Der Hauptgang",
+      title: "Moderne Fusion",
+      content: "Ein Crossover aus Swing, Pop und Modernen Klängen – würzig arrangiert für den anspruchsvollen Gaumen."
     },
     {
-      type: "The Finish",
-      title: "Grand Dessert",
-      content: "Velvety ballads and midnight blues, served with a side of lingering silence and golden reverb."
+      type: "Der Abgang",
+      title: "Feine Weisen",
+      content: "Gefühlvolle Melodien und sanfte Klänge, die wie ein edler Tropfen lange nachhallen."
     }
   ];
 
@@ -227,8 +227,8 @@ const Menu = () => {
     <section className="min-h-screen py-32 bg-stone-900/10 backdrop-blur-sm">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-24">
-          <p className="text-honey-gold uppercase tracking-[0.3em] text-sm mb-4 italic">Our Repertoire</p>
-          <h2 className="text-6xl md:text-8xl font-playfair font-bold text-white uppercase tracking-tighter">The Menu</h2>
+          <p className="text-honey-gold uppercase tracking-[0.3em] text-sm mb-4 italic">Unser Repertoire</p>
+          <h2 className="text-6xl md:text-8xl font-playfair font-bold text-white uppercase tracking-tighter">Das Menü</h2>
         </div>
 
         <div className="space-y-24">
@@ -260,10 +260,10 @@ const Contact = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-6">
       <div className="glass-panel p-12 md:p-24 rounded-[4rem] text-center max-w-4xl w-full border-honey-gold/20 relative z-10">
         <h2 className="text-5xl md:text-8xl font-playfair font-bold text-white mb-8 tracking-tighter italic">
-          Reservations
+          Kontakt & Buchung
         </h2>
         <p className="text-xl md:text-2xl text-stone-400 mb-12 font-inter">
-          Book your private tasting for an evening of sonic gastronomy.
+          Buchen Sie Ihre private Verkostung und erleben Sie echte musikalische Schmankerl.
         </p>
 
         <div className="flex flex-col items-center gap-6">
@@ -274,7 +274,7 @@ const Contact = () => {
             className="flex items-center gap-3 bg-honey-gold text-warm-black px-12 py-6 rounded-full font-inter font-bold text-xl transition-colors hover:bg-white"
           >
             <Mail size={24} />
-            Book Your Tasting
+            Anfrage Senden
           </motion.a>
           
           <div className="flex gap-8 mt-8 text-stone-500 items-center">
