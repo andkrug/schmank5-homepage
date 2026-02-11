@@ -319,16 +319,18 @@ const LegalModal = ({ isOpen, onClose, type }: { isOpen: boolean; onClose: () =>
           <div>
             <h2 className="text-3xl font-playfair text-white mb-6">Impressum</h2>
             <div className="space-y-4 font-inter text-sm md:text-base">
-              <p><strong>Andreas Rene Krug IT-Dienstleistungen</strong></p>
+              <p><strong>Andreas Rene Krug</strong></p>
               <p>
+                IT-Dienstleistungen<br/>
                 Schrannengasse 4/Top 17<br/>
                 5020 Salzburg<br/>
                 Österreich
               </p>
               <p>
                 <strong>Kontakt:</strong><br/>
-                Telefon: +43 664 400 73 54<br/>
-                E-Mail: office@andreas-krug.at
+                Telefon: <a href='tel:+436644007354'>+43 664 400 73 54</a><br/>
+                E-Mail: <a href='mailto:office@andreas-krug.at'>office@andreas-krug.at</a><br/>
+                Web: <a href="https://www.andreas-krug.at" target="_blank" rel="noopener noreferrer">www.andreas-krug.at</a>
               </p>
               <p>
                 <strong>Unternehmensgegenstand:</strong><br/>
