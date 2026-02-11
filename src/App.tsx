@@ -279,12 +279,17 @@ const Contact = () => {
           </motion.a>
           
           <div className="flex gap-8 mt-8 text-stone-500 items-center">
+            <a href="mailto:kontakt@schmank5.at" className="hover:text-honey-gold transition-colors flex items-center gap-2">
+              <Mail size={18} />
+              <span>kontakt@schmank5.at</span>
+            </a>
+            <div className="w-1 h-1 bg-stone-700 rounded-full" />
             <a href="tel:+436644007354" className="hover:text-honey-gold transition-colors flex items-center gap-2">
               <Phone size={18} />
               <span>+43 664 4007354</span>
             </a>
             <div className="w-1 h-1 bg-stone-700 rounded-full" />
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-honey-gold transition-colors flex items-center gap-2">
+            <a href="https://www.instagram.com/schmank5" target="_blank" rel="noreferrer" className="hover:text-honey-gold transition-colors flex items-center gap-2">
               <Instagram size={18} />
               <span>@schmank5</span>
             </a>
